@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="news-list">
-      <li v-for="item in fetched_news" class="post">
+      <li v-for="item in listItems" class="post">
         <div class="points">
           {{ item.points }}
         </div>
@@ -21,17 +21,33 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapState } from 'vuex';
 
 export default {
   name: "ListView",
   computed: {
-    ...mapGetters(['fetched_news'])
+    listItems() {
+      const routeName = this.$route.name;
+      if(routeName == 'news'){
+        return this.$store.state.news;
+      }else if(routeName == 'jobs'){
+        return this.$store.state.jobs;
+      }else{
+        return this.$store.state.ask;
+      }
+    }
   },
   created() {
-    this.$store.dispatch('FETCH_NEWS');
+    const routeName = this.$route.name;
+    console.log(this.$route);
+    if(routeName == 'news'){
+      this.$store.dispatch('FETCH_NEWS');
+    }else if(routeName == 'jobs'){
+      this.$store.dispatch('FETCH_JOBS');
+    }else{
+      this.$store.dispatch('FETCH_ASK');
+    }
   },
-  methods: {}
 }
 </script>
 
