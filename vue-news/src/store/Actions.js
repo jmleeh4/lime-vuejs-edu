@@ -7,8 +7,8 @@ import {
 } from "@/api/common";
 
 export default {
-    FETCH_NEWS({commit}) {
-        fetchNewList()
+     async FETCH_NEWS({commit}) {
+        await fetchNewList()
             .then(response => {
                 commit('FETCHED_NEWS', response.data);
             })

@@ -1,13 +1,13 @@
 <template>
-
+  <ListView></ListView>
 </template>
 
 <script>
-
+import ListView from '../components/ListView';
 
 export default {
-  created() {
-    this.$store.dispatch('FETCH_ASK');
+  components : {
+    ListView,
   }
 }
 </script>
