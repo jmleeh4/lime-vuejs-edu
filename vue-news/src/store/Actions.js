@@ -16,8 +16,8 @@ export default {
                 console.log(error);
             });
     },
-    FETCH_ASK({commit}){
-        fetchAskList()
+    async FETCH_ASK({commit}){
+        await fetchAskList()
             .then(response => {
                 commit('FETCHED_ASK', response.data);
             })
@@ -25,8 +25,8 @@ export default {
                 console.log(error);
             })
     },
-    FETCH_JOBS({commit}){
-        fetchJobsList()
+    async FETCH_JOBS({commit}){
+        await fetchJobsList()
             .then(response =>{
                 commit('FETCHED_JOBS',response.data);
             })
