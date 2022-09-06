@@ -4,6 +4,7 @@ import AskView from '../views/AskView'
 import JobsView from '../views/JobsView'
 import ItemView from "../views/ItemView"
 import UserView from "../views/UserView";
+import Calculator from "@/views/Calculator";
 import HelloWorld from "@/components/HelloWorld";
 
 
@@ -40,6 +41,10 @@ const router = new createRouter({
         {
             path: '/hello',
             component : HelloWorld
+        },
+        {
+            path: '/calculator',
+            component : Calculator
         }
     ],
 
