@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="selectBox">
+      <select>
+        <option>News</option>
+        <option>Ask</option>
+        <option>Jobs</option>
+      </select>
+    </div>
     <ul class="board">
       <li class="fl tc w70 title t_line">POINTS</li>
       <li class="fl tc w500 title t_line">TITLE</li>
@@ -106,6 +113,11 @@ ul li {
   height: 40px;
   line-height: 40px;
   background: #f3f3f3;
+}
+
+.selectBox{
+  margin-left: 40px;
+  margin-top: 30px;
 }
 
 </style>
