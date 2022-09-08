@@ -6,6 +6,7 @@ import ItemView from "../views/ItemView"
 import UserView from "../views/UserView";
 import Calculator from "@/views/Calculator";
 import HelloWorld from "@/components/HelloWorld";
+import UserInfo from "@/views/UserInfo";
 
 
 const router = new createRouter({
@@ -45,6 +46,10 @@ const router = new createRouter({
         {
             path: '/calculator',
             component : Calculator
+        },
+        {
+        	path: '/userInfo',
+        	component : UserInfo
         }
     ],
 
